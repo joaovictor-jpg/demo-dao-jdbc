@@ -10,11 +10,11 @@ import db.DbException;
 import model.dao.DepartmentDao;
 import model.entities.Department;
 
-public class DepartamentDaoJDBC implements DepartmentDao {
+public class DepartmentDaoJDBC implements DepartmentDao {
 
 	Connection conn = null;
 
-	public DepartamentDaoJDBC(Connection conn) {
+	public DepartmentDaoJDBC(Connection conn) {
 		this.conn = conn;
 	}
 
