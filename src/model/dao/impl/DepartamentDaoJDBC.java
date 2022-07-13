@@ -9,7 +9,6 @@ import java.util.List;
 import db.DbException;
 import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class DepartamentDaoJDBC implements DepartmentDao {
 
@@ -44,14 +43,14 @@ public class DepartamentDaoJDBC implements DepartmentDao {
 		ResultSet resultSet = null;
 
 		try {
-			stm = conn.prepareStatement("");
+			stm = conn.prepareStatement("SELECT * FROM department WHERE Id = ?");
 			stm.setInt(1, id);
 			resultSet = stm.executeQuery();
 
 			if (resultSet.next()) {
 				Department dep = new Department();
-				dep.setId(resultSet.getInt("DepartmentId"));
-				dep.setName("depName");
+				dep.setId(resultSet.getInt("Id"));
+				dep.setName(resultSet.getString("Name"));
 
 				return dep;
 			}
