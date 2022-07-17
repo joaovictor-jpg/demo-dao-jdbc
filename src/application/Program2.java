@@ -21,12 +21,22 @@ public class Program2 {
 		
 		listDep.forEach(System.out::println);
 		
-		System.out.println("=== TEST 1: department insert ===");
-		Department dep = new Department();
-		dep.setId(null);
-		dep.setName("Test");
-		departmentDao.insert(dep);
-		System.out.println("Insert! New id = " + dep.getId() );
+//		System.out.println("=== TEST 1: department insert ===");
+//		Department dep = new Department();
+//		dep.setId(null);
+//		dep.setName("Test");
+//		departmentDao.insert(dep);
+//		System.out.println("Insert! New id = " + dep.getId() );
+		
+//		System.out.println("=== TEST 1: department update ===");
+//		department = departmentDao.findById(6);
+//		department.setName("home appliances");
+//		departmentDao.update(department);
+//		System.out.println("Update completed");
+		
+		System.out.println("=== TEST 1: department delete ===");
+		departmentDao.deletById(8);
+		System.out.println("Delete completed");
 	}
 
 }
