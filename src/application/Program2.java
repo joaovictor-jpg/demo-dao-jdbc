@@ -20,6 +20,13 @@ public class Program2 {
 		List<Department> listDep = departmentDao.findAll();
 		
 		listDep.forEach(System.out::println);
+		
+		System.out.println("=== TEST 1: department insert ===");
+		Department dep = new Department();
+		dep.setId(null);
+		dep.setName("Test");
+		departmentDao.insert(dep);
+		System.out.println("Insert! New id = " + dep.getId() );
 	}
 
 }
